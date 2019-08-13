@@ -33,7 +33,7 @@ function inhabitent_remove_submenus() {
 }
 add_action( 'admin_menu', 'inhabitent_remove_submenus', 110 );
 
-// custom login for theme
+// custom logo in wp-login
 function inhabitent_custom_login() {
 	echo '<style type="text/css">
         #login h1 a { 
@@ -46,6 +46,7 @@ function inhabitent_custom_login() {
 }
 add_action('login_head', 'inhabitent_custom_login');
 
+// custom logo url in wp-login
 function inhabitent_custom_login_url() {
     return get_bloginfo( 'url' );
 }

@@ -10,3 +10,16 @@
 	margin-left: auto;
 	margin-right: auto;
 }
+
+// Flex center and middle
+@mixin flex-items-content($align-items: center, $justify-content: center){
+	display: flex;
+	align-items: $align-items;
+	justify-content: $justify-content;
+}
+
+// Default width for the site
+@mixin width-default {
+	width: $base__width;
+	margin: 0 auto;
+}
