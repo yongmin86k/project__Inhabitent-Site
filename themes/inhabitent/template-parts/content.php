@@ -28,6 +28,7 @@
 			<a href="<?= esc_url( get_permalink() );?>">
 				<button type="button">Read more →</button>
 			</a>
+
 			
 		<?php else : the_excerpt(); ?>
 		<?php endif; ?>
