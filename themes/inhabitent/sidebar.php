@@ -6,10 +6,13 @@
  */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+	echo '</main>';
 	return;
 }
 ?>
 
-<div id="secondary" class="widget-area" role="complementary">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
-</div><!-- #secondary -->
+	<div id="secondary" class="widget-area" role="complementary">
+		<?php dynamic_sidebar( 'sidebar-1' ); ?>
+	</div><!-- #secondary -->
+
+</div><!-- .main-content -->

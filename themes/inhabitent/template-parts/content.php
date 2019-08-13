@@ -10,7 +10,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php if ( has_post_thumbnail() ) : ?>
-			<?php the_post_thumbnail( 'large' ); ?>
+			<?php the_post_thumbnail( 'full' ); ?>
 		<?php endif; ?>
 
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
@@ -23,6 +23,14 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<?php the_excerpt(); ?>
+		<?php if ( ! has_excerpt() ) : the_excerpt(); ?>
+
+			<a href="<?= esc_url( get_permalink() );?>">
+				<button type="button">Read more →</button>
+			</a>
+			
+		<?php else : the_excerpt(); ?>
+		<?php endif; ?>
+		
 	</div><!-- .entry-content -->
 </article><!-- #post-## -->

@@ -4,8 +4,9 @@
 
 /* Links */
 
-a {
-	color: $color__link;
+nav a {
+	color: $color__text-screen;
+	text-decoration: none;
 
 	&:visited {
 		color: $color__link-visited;
@@ -28,9 +29,10 @@ a {
 
 .site-header {
 	position: relative;
+	@include flex-items-content;
 	&:after {
 		position: absolute;
-		bottom: 0;
+		left: 0; bottom: 0;
 		width: 100%;
 		height: 1px;
 		content: '';
@@ -41,12 +43,11 @@ a {
 	// clear: both;
 	header & { height: 3.125rem; }
 	@include flex-items-content(center, space-between);
-	width: 100%;
+	@include site-width;
 	height: 100%;
 	padding: .5rem;
 	font-family: $font__header;
 	text-transform: uppercase;
-	@include width-default;
 
 	.menu-toggle {
 		display: none;
@@ -68,8 +69,8 @@ a {
 		li {
 			padding-left: 1.5rem;
 			a {
-				text-decoration: none;
-				color: $color__text-screen;
+				// text-decoration: none;
+				// color: $color__text-screen;
 			}
 		}
 	}

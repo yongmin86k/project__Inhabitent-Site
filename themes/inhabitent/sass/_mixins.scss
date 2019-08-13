@@ -19,7 +19,6 @@
 }
 
 // Default width for the site
-@mixin width-default {
-	width: $base__width;
-	margin: 0 auto;
+@mixin site-width($default: $base__width) {
+	width: $default;
 }
