@@ -30,6 +30,7 @@
 
 .site-content {
 	@include flex-items-content;
+	flex-direction: column;
 	position: relative;
 
 	.main-content {
@@ -106,4 +107,13 @@
 }
 .bypostauthor {
 	display: block;
+}
+
+.post-title {
+	text-align: center;
+	text-transform: uppercase;
+	font-family: $font__header;
+}
+.post-container {
+	@include flex-items-content(center, space-between);
 }

@@ -455,6 +455,36 @@ textarea {
   padding-left: 3px;
   width: 100%; }
 
+.search-form label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start; }
+  .search-form label .search-submit {
+    cursor: pointer;
+    padding: 0;
+    border: 0 solid transparent;
+    color: #248A83; }
+    .search-form label .search-submit:hover, .search-form label .search-submit:active, .search-form label .search-submit:focus {
+      background-color: transparent;
+      border-color: none;
+      color: #2f1339; }
+  .search-form label .search-field {
+    width: 0;
+    text-transform: inherit;
+    font-family: inherit;
+    margin-left: 1rem;
+    border: 0 solid transparent;
+    -webkit-transition: .4s;
+    transition: .4s; }
+    .search-form label .search-field.expand {
+      width: 12rem; }
+
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
@@ -517,20 +547,31 @@ nav a {
       display: block;
       width: auto;
       height: 100%; }
-  .main-navigation ul {
+  .main-navigation .site-primary-menu {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    list-style: none;
-    margin: 0; }
-    .main-navigation ul li {
-      padding-left: 1.5rem; }
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+    .main-navigation .site-primary-menu ul {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
+      list-style: none;
+      margin: 0;
+      padding: 0 1.5rem 0 0; }
+      .main-navigation .site-primary-menu ul li {
+        padding-left: 1.5rem; }
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -636,6 +677,10 @@ nav a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: relative; }
   .site-content .main-content {
     display: -webkit-box;
@@ -703,6 +748,22 @@ nav a {
 
 .bypostauthor {
   display: block; }
+
+.post-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Novecento Sans Web", sans-serif; }
+
+.post-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
 
 /*--------------------------------------------------------------
 # Media
