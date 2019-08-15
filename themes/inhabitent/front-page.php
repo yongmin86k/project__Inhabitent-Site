@@ -132,7 +132,7 @@ get_header(); ?>
 		</div>
 		<!-- End loop for adventures -->
 		<a href="<?php echo get_post_type_archive_link( 'adventure' ); ?>">
-			<button> asdfdfdfdf </button>
+			<button>More adventures</button>
 		</a>
 
 		</main><!-- #main -->
