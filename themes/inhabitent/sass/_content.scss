@@ -37,6 +37,23 @@
 		@include flex-items-content(flex-start, space-between);
 		@include site-width;
 
+		&.full-width {
+			@include flex-items-content();
+			flex-direction: column;
+			width: 100%;
+			.full-width-image {
+				@include flex-items-content();
+			}
+			.content-area {
+				margin: 0;
+				flex: 0 1 auto;
+				width: $base__width;
+				&::after {
+					display: none;
+				}
+			}
+		}
+
 		.content-area {
 			position: relative;
 			margin-right: $base__space-unit*2;
@@ -63,8 +80,6 @@
 
 	.entry-header {
 		position: relative;
-		font-family: $font__header;
-		text-transform: uppercase;
 
 		.blog & {
 			.entry-title, .entry-meta {
@@ -110,9 +125,7 @@
 }
 
 .post-title {
-	text-align: center;
-	text-transform: uppercase;
-	font-family: $font__header;
+
 }
 .post-container {
 	@include flex-items-content(center, space-between);

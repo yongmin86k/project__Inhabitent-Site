@@ -283,7 +283,12 @@ textarea {
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  clear: both; }
+  font-family: "Novecento Sans Web", sans-serif;
+  text-transform: uppercase; }
+
+.full-width h1 {
+  color: white;
+  font-size: 3rem; }
 
 /* Copy */
 p {
@@ -476,6 +481,7 @@ textarea {
       color: #2f1339; }
   .search-form label .search-field {
     width: 0;
+    padding: 0;
     text-transform: inherit;
     font-family: inherit;
     margin-left: 1rem;
@@ -483,6 +489,7 @@ textarea {
     -webkit-transition: .4s;
     transition: .4s; }
     .search-form label .search-field.expand {
+      padding: 5px;
       width: 12rem; }
 
 /*--------------------------------------------------------------
@@ -693,6 +700,39 @@ nav a {
         -ms-flex-pack: justify;
             justify-content: space-between;
     width: 1120px; }
+    .site-content .main-content.full-width {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      width: 100%; }
+      .site-content .main-content.full-width .full-width-image {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center; }
+      .site-content .main-content.full-width .content-area {
+        margin: 0;
+        -webkit-box-flex: 0;
+            -ms-flex: 0 1 auto;
+                flex: 0 1 auto;
+        width: 1120px; }
+        .site-content .main-content.full-width .content-area::after {
+          display: none; }
     .site-content .main-content .content-area {
       position: relative;
       margin-right: 3rem;
@@ -714,9 +754,7 @@ nav a {
 .hentry {
   margin: 3rem 0 4.5rem 0; }
   .hentry .entry-header {
-    position: relative;
-    font-family: "Novecento Sans Web", sans-serif;
-    text-transform: uppercase; }
+    position: relative; }
     .blog .hentry .entry-header .entry-title, .blog .hentry .entry-header .entry-meta {
       position: absolute;
       background-color: #248A83;
@@ -748,11 +786,6 @@ nav a {
 
 .bypostauthor {
   display: block; }
-
-.post-title {
-  text-align: center;
-  text-transform: uppercase;
-  font-family: "Novecento Sans Web", sans-serif; }
 
 .post-container {
   display: -webkit-box;

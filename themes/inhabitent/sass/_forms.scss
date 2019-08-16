@@ -74,12 +74,14 @@ textarea {
 				}
 				&-field {
 					width: 0;
+					padding: 0;
 					text-transform: inherit;
 					font-family: inherit;
 					margin-left: 1rem;
 					border: 0 solid transparent;
 					transition: .4s;
 					&.expand {
+						padding: 5px;
 						width: 12rem;
 					}
 				}
