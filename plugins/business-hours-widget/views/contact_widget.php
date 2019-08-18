@@ -22,13 +22,17 @@
 <?php if( strlen( trim( $phone_number ) ) > 0 ): ?>
     <li class="<?php echo "{$this->get_widget_slug()}-li" ?>">
         <i class="fas fa-phone-alt"></i>
-        <?php echo $phone_number?>
+        <a href="tel:<?php echo $phone_number?>">
+            <?php echo $phone_number?>
+        </a>
     </li>
 <?php endif ?>
 <?php if( strlen( trim( $email ) ) > 0 ): ?>
     <li class="<?php echo "{$this->get_widget_slug()}-li" ?>">
         <i class="fas fa-envelope"></i>
-        <?php echo $email?>
+        <a href="mailto:<?php echo $email?>">
+            <?php echo $email?>
+        </a>
     </li>
 <?php endif ?>
 <?php if( strlen( trim( $address ) ) > 0 ): ?>

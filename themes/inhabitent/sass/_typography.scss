@@ -18,11 +18,26 @@ textarea {
 h1, h2, h3, h4, h5, h6 {
 	font-family: $font__header;
 	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin-bottom: $base__space-unit;
+	line-height: $font__line-height-header;
 }
-	.full-width h1 {
-		color: white;
+h1 {
+	font-size: 2.4rem;
+	.full-width & {
 		font-size: 3rem;
+		color: white;
 	}
+}
+h2 {
+	font-size: 2.125em;
+	.full-width & {
+		text-align: center;
+	}
+	&.widget-title {
+		font-size: 1.5rem;
+	}
+}
 
 /* Copy */
 

@@ -47,7 +47,7 @@
 			.content-area {
 				margin: 0;
 				flex: 0 1 auto;
-				width: $base__width;
+				width: $blog__width;
 				&::after {
 					display: none;
 				}
@@ -77,6 +77,9 @@
 
 .hentry {
 	margin: $base__space-unit*2  0 $base__space-unit*3 0;
+	&:last-child {
+		margin-bottom: 0;
+	}
 
 	.entry-header {
 		position: relative;
@@ -94,7 +97,11 @@
 				font-size: 2rem;
 				letter-spacing: 2px;
 				a {
+					color: white;
 					text-decoration: none;
+					&:hover, &:focus, &:active {
+						color: $color__header-hover;
+					}
 				}
 			}
 			.entry-meta {
@@ -124,9 +131,68 @@
 	display: block;
 }
 
-.post-title {
-
-}
 .post-container {
 	@include flex-items-content(center, space-between);
+}
+
+/* Footer */
+
+.site-footer {
+	position: relative;
+	width: 100%;
+	padding: 3rem 0 0 0;
+	margin-top: 2rem;
+	@include flex-items-content();
+	flex-direction: column;
+	
+	.flex-footer {
+		max-width: $base__width;
+		width: 100%;
+		@include flex-items-content();
+		margin-bottom: 3rem;
+		.footer-contents {
+			width: inherit;
+			@include flex-items-content(flex-start, flex-start);
+			flex-wrap: wrap;
+			
+			& > *:nth-child(1), & > *:nth-child(2){ flex: 1;}
+			& > *:nth-child(3){flex: 2;}
+			h3 {
+				color: $color__footer-header;
+				margin: .75rem;
+			}
+			ul {
+				color: white;
+				margin: 0; padding: 0;
+				list-style-type: none;
+				li {
+					margin: 1rem .5rem;
+					i { width: 1.5rem; text-align: center;}
+					a { 
+						color: white;
+						&:hover { text-decoration: underline; }
+					 }
+					&:last-child { margin-bottom: 0;}
+				}
+			}
+			.inhabitent-logo {
+				text-align: right;
+				img { 
+					max-width: 17.5rem;
+					display: inline;
+				}
+			}
+		}
+	}
+	.footer-copyright {
+		padding: 1.5rem;
+		a {
+			font-family: $font__header;
+			color: white;
+			text-transform: uppercase;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
 }
