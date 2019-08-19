@@ -309,7 +309,8 @@ h1 {
   .full-width h1 {
     font-size: 3rem;
     color: white; }
-  .post-type-archive-product h1 {
+  .post-type-archive-product h1,
+  .tax-product-type h1 {
     margin: 0 0 .5rem 0;
     text-align: center; }
 
@@ -819,7 +820,8 @@ nav a {
             -ms-flex: 0 1 auto;
                 flex: 0 1 auto;
         width: 800px; }
-      .post-type-archive-product .site-content .main-content .content-area {
+      .post-type-archive-product .site-content .main-content .content-area,
+      .tax-product-type .site-content .main-content .content-area {
         margin: 3rem 0 0 0; }
       .blog .site-content .main-content .content-area::after,
       .page-template-default .site-content .main-content .content-area::after,
@@ -854,14 +856,18 @@ nav a {
       -ms-flex-direction: column;
           flex-direction: column; }
 
-.post-type-archive-product .site-main .page-header {
+.post-type-archive-product .site-main .page-header,
+.tax-product-type .site-main .page-header {
   position: relative;
   padding-bottom: 3rem;
-  margin-bottom: 3rem; }
-  .post-type-archive-product .site-main .page-header::after {
+  margin-bottom: 3rem;
+  text-align: center; }
+  .post-type-archive-product .site-main .page-header::after,
+  .tax-product-type .site-main .page-header::after {
     content: '';
     position: absolute;
     bottom: 0;
+    left: 0;
     width: 100%;
     height: 1px;
     border-bottom: 1px dashed #c8c8c8; }

@@ -73,11 +73,14 @@ get_header('front-page'); ?>
 						$icon = get_template_directory_uri() . '/images/product-type-icons/' . $term->slug . '.svg';
 						$p_type_name = $term->name;
 						$p_type_description = $term->description;
+						$p_type_url = get_term_link($term);
 				?>
 				<div class="loop-item-container">
 					<img class="product-type-icon" src="<?=$icon?>" alt="<?=$p_type_name;?>"/>
 					<p class="product-type-description"><?=$p_type_description;?></p>
-					<button class="product-type-btn"><?=$p_type_name?> Stuff</button>
+					<a href="<?=$p_type_url?>">
+						<button class="product-type-btn"><?=$p_type_name?> Stuff</button>
+					</a>
 				</div>
 				<?php endforeach ?>
 			</div>

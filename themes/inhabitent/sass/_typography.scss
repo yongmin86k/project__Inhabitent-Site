@@ -28,7 +28,8 @@ h1 {
 		font-size: 3rem;
 		color: white;
 	}
-	.post-type-archive-product & {
+	.post-type-archive-product &,
+	.tax-product-type & {
 		margin: 0 0 .5rem 0;
 		text-align: center;
 	}
