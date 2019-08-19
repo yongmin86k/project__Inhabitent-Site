@@ -52,10 +52,26 @@ ol {
 
 ul {
   list-style: disc;
+
+  .list-product-texonomies & {
+    @include flex-items-content();
+    margin: 0;
+    margin-top: 1.5rem; padding: 0;
+    list-style: none;
+    font-family: $font__header;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
 }
 
 ol {
   list-style: decimal;
+}
+
+li {
+  .list-product-texonomies & { 
+    margin: 0 1.5rem;
+  }
 }
 
 li > ul,

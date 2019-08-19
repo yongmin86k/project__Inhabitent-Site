@@ -152,7 +152,7 @@ get_header('front-page'); ?>
 					$post_item_uri = $adv -> guid;
 				?>
 					<div class="loop-item-container">
-						<div class="adventure-type-image" style="					
+						<div class="adventure-type-image" style="
 								background :
 									linear-gradient( to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.4) 100% ), 
 									url(<?php echo get_the_post_thumbnail_url($adv -> ID);?>);
