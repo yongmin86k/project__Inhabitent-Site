@@ -22,3 +22,21 @@
 @mixin site-width($default: $base__width) {
 	width: $default;
 }
+
+%front-page-box {
+	border: $border__solid;
+	border-top-width: 5px;
+	padding: .75rem;
+	padding-bottom: 1.2rem;
+}
+
+%btn-highlight {
+	background-color: $color__text-screen;
+		border-color: $color__text-screen;
+		color: white;
+		&:hover, &:active, &:focus {
+			background-color: darken($color__text-screen, 15%);
+			border-color: darken($color__text-screen, 15%);
+			color: white;
+		}
+}

@@ -22,6 +22,17 @@ input[type="submit"] {
 		border-color: $color__text-screen;
 		color: white;
 	}
+
+	.loop-type-product-type & {
+		@extend %btn-highlight;
+	}
+	
+}
+
+.button-adventures {
+	@extend %btn-highlight;
+	margin-top: 2rem;
+	font-size: 1.2rem;
 }
 
 /* Fields */

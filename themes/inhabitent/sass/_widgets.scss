@@ -3,7 +3,7 @@
 --------------------------------------------------------------*/
 
 .widget {
-	margin: 0 0 $base__space-unit;
+	margin: 0 0 $base__space-unit*2;
 
 	/* Make sure select elements fit in widgets. */
 	select {
@@ -14,4 +14,15 @@
 /* Search widget. */
 .widget_search .search-submit {
 	display: none;
+}
+
+.widget_archive {
+	ul {
+		list-style-type: none;
+		margin:0; padding: 0;
+	}
+}
+
+.day-of-week {
+	font-weight: bold;
 }

@@ -43,6 +43,21 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Page Templates
 	## Front page
 --------------------------------------------------------------*/
+.custom-loop .loop-type-product-type .loop-item-container, .custom-loop .loop-type-journals .loop-item-container .journal-content {
+  border: 1px solid #e1e1e1;
+  border-top-width: 5px;
+  padding: .75rem;
+  padding-bottom: 1.2rem; }
+
+.loop-type-product-type button, .loop-type-product-type input[type="button"], .loop-type-product-type input[type="reset"], .loop-type-product-type input[type="submit"], .button-adventures {
+  background-color: #248A83;
+  border-color: #248A83;
+  color: white; }
+  .loop-type-product-type button:hover, .loop-type-product-type input:hover[type="button"], .loop-type-product-type input:hover[type="reset"], .loop-type-product-type input:hover[type="submit"], .button-adventures:hover, .loop-type-product-type button:active, .loop-type-product-type input:active[type="button"], .loop-type-product-type input:active[type="reset"], .loop-type-product-type input:active[type="submit"], .button-adventures:active, .loop-type-product-type button:focus, .loop-type-product-type input:focus[type="button"], .loop-type-product-type input:focus[type="reset"], .loop-type-product-type input:focus[type="submit"], .button-adventures:focus {
+    background-color: #144d49;
+    border-color: #144d49;
+    color: white; }
+
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -446,6 +461,10 @@ input[type="submit"] {
     border-color: #248A83;
     color: white; }
 
+.button-adventures {
+  margin-top: 2rem;
+  font-size: 1.2rem; }
+
 /* Fields */
 input[type="text"],
 input[type="email"],
@@ -527,6 +546,7 @@ nav a {
 .site-header {
   background-color: rgba(255, 255, 255, 0.85);
   position: fixed;
+  top: 0;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -660,7 +680,7 @@ nav a {
 # Widgets
 --------------------------------------------------------------*/
 .widget {
-  margin: 0 0 1.5rem;
+  margin: 0 0 3rem;
   /* Make sure select elements fit in widgets. */ }
   .widget select {
     max-width: 100%; }
@@ -668,6 +688,14 @@ nav a {
 /* Search widget. */
 .widget_search .search-submit {
   display: none; }
+
+.widget_archive ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+
+.day-of-week {
+  font-weight: bold; }
 
 /*--------------------------------------------------------------
 # Content
@@ -687,6 +715,10 @@ nav a {
 .entry-content,
 .entry-summary {
   margin: 1.5rem 0 0; }
+  .home .page-content, .home
+  .entry-content, .home
+  .entry-summary {
+    margin: 0; }
 
 .page-links {
   clear: both;
@@ -706,7 +738,11 @@ nav a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  position: relative; }
+  position: relative;
+  margin-top: 3.125rem; }
+  .home .site-content,
+  .page-template-page-about .site-content {
+    margin-top: 0; }
   .site-content .main-content {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -718,7 +754,8 @@ nav a {
         -ms-flex-pack: justify;
             justify-content: space-between;
     width: 1120px; }
-    .site-content .main-content.full-width {
+    .home .site-content .main-content,
+    .page-template-page-about .site-content .main-content {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -733,7 +770,8 @@ nav a {
           -ms-flex-direction: column;
               flex-direction: column;
       width: 100%; }
-      .site-content .main-content.full-width .full-width-image {
+      .home .site-content .main-content .full-width-image,
+      .page-template-page-about .site-content .main-content .full-width-image {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -743,21 +781,24 @@ nav a {
         -webkit-box-pack: center;
             -ms-flex-pack: center;
                 justify-content: center; }
-      .site-content .main-content.full-width .content-area {
+    .site-content .main-content .content-area {
+      position: relative;
+      margin-right: 3rem;
+      -webkit-box-flex: 6;
+          -ms-flex: 6;
+              flex: 6;
+      padding-bottom: 3rem; }
+      .home .site-content .main-content .content-area {
+        margin: 0; }
+      .page-template-page-about .site-content .main-content .content-area {
         margin: 0;
         -webkit-box-flex: 0;
             -ms-flex: 0 1 auto;
                 flex: 0 1 auto;
         width: 800px; }
-        .site-content .main-content.full-width .content-area::after {
-          display: none; }
-    .site-content .main-content .content-area {
-      position: relative;
-      margin-right: 3rem;
-      -webkit-box-flex: 0;
-          -ms-flex: 0 1 75%;
-              flex: 0 1 75%; }
-      .site-content .main-content .content-area::after {
+      .blog .site-content .main-content .content-area::after,
+      .page-template-default .site-content .main-content .content-area::after,
+      .post-template-default .site-content .main-content .content-area::after {
         position: absolute;
         right: -3rem;
         top: 0;
@@ -766,15 +807,170 @@ nav a {
         content: '';
         border-right: 1px solid #e1e1e1; }
     .site-content .main-content .widget-area {
+      -webkit-box-flex: 2;
+          -ms-flex: 2;
+              flex: 2;
       height: 100%;
+      margin-top: 1.5rem;
       margin-left: 3rem; }
+
+.home .site-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+.custom-loop {
+  margin-top: 4.5rem; }
+  .custom-loop h2 {
+    font-size: 2.4rem;
+    font-weight: 400;
+    margin: 0 0 3.75rem 0;
+    text-align: center; }
+  .custom-loop .loop-item-container {
+    margin-right: 1.5rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1; }
+    .custom-loop .loop-item-container:last-child {
+      margin-right: 0; }
+  .custom-loop .loop-type-product-type {
+    max-width: 1120px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center; }
+    .custom-loop .loop-type-product-type .loop-item-container {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
+      .custom-loop .loop-type-product-type .loop-item-container:hover {
+        border-color: #d99054; }
+      .custom-loop .loop-type-product-type .loop-item-container .product-type-icon {
+        width: 4.125rem;
+        height: 4.125rem; }
+      .custom-loop .loop-type-product-type .loop-item-container .product-type-description {
+        max-height: 5.25rem; }
+  .custom-loop .loop-type-journals {
+    max-width: 1120px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+    .custom-loop .loop-type-journals .loop-item-container .journal-content {
+      padding: .75rem; }
+      .custom-loop .loop-type-journals .loop-item-container .journal-content .journal-type-meta {
+        margin: 0;
+        font-size: .75rem; }
+      .custom-loop .loop-type-journals .loop-item-container .journal-content .journal-type-title {
+        height: 3.125rem;
+        font-size: 1.3rem;
+        margin: 0 0 1.5rem 0;
+        overflow: hidden; }
+  .custom-loop .loop-type-adventures {
+    max-width: 1120px;
+    height: 34.25rem;
+    display: grid;
+    grid-template: repeat(2, 1fr)/repeat(4, 1fr);
+    grid-gap: 1.5rem; }
+    .custom-loop .loop-type-adventures .loop-item-container {
+      position: relative;
+      margin: 0; }
+      .custom-loop .loop-type-adventures .loop-item-container .adventure-type-image {
+        position: absolute;
+        width: 100%;
+        height: 100%; }
+      .custom-loop .loop-type-adventures .loop-item-container .adventure-type-title {
+        position: relative;
+        padding: 1.5rem;
+        padding-top: 2.8rem; }
+        .custom-loop .loop-type-adventures .loop-item-container .adventure-type-title a {
+          color: white; }
+          .custom-loop .loop-type-adventures .loop-item-container .adventure-type-title a h3 {
+            font-family: "Merriweather Web", sans-serif;
+            font-weight: 400;
+            font-size: 1.6rem;
+            line-height: 1.25;
+            text-transform: none;
+            margin: 0;
+            text-align: left;
+            margin-bottom: 1rem; }
+            .custom-loop .loop-type-adventures .loop-item-container .adventure-type-title a h3:hover {
+              color: #f0e4d1; }
+          .custom-loop .loop-type-adventures .loop-item-container .adventure-type-title a button {
+            color: white;
+            border-color: white;
+            background-color: transparent; }
+            .custom-loop .loop-type-adventures .loop-item-container .adventure-type-title a button:hover, .custom-loop .loop-type-adventures .loop-item-container .adventure-type-title a button:active, .custom-loop .loop-type-adventures .loop-item-container .adventure-type-title a button:focus {
+              border-color: #248A83;
+              background-color: #248A83; }
+      .custom-loop .loop-type-adventures .loop-item-container:nth-child(1) {
+        grid-column: 1 / span 2;
+        grid-row: 1 / span 2; }
+        .custom-loop .loop-type-adventures .loop-item-container:nth-child(1) .adventure-type-title a h3 {
+          font-size: 3rem; }
+      .custom-loop .loop-type-adventures .loop-item-container:nth-child(2) {
+        grid-column: 3 / span 2;
+        grid-row: 1 / 2; }
+        .custom-loop .loop-type-adventures .loop-item-container:nth-child(2) .adventure-type-title a h3 {
+          font-size: 2.4rem; }
+      .custom-loop .loop-type-adventures .loop-item-container:nth-child(3) {
+        grid-column: 3 / 4;
+        grid-row: 2 / 3; }
+      .custom-loop .loop-type-adventures .loop-item-container:nth-child(4) {
+        grid-column: 4 / 5;
+        grid-row: 2 / 3; }
 
 .hentry {
   margin: 3rem 0 4.5rem 0; }
+  .home .hentry {
+    margin: 0; }
   .hentry:last-child {
     margin-bottom: 0; }
   .hentry .entry-header {
     position: relative; }
+    .home .hentry .entry-header .hero-image-front-page {
+      width: 100vw;
+      height: 100vh;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
     .blog .hentry .entry-header .entry-title, .blog .hentry .entry-header .entry-meta {
       position: absolute;
       background-color: #248A83;
@@ -810,23 +1006,11 @@ nav a {
 .bypostauthor {
   display: block; }
 
-.post-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between; }
-
 /* Footer */
 .site-footer {
   position: relative;
   width: 100%;
   padding: 3rem 0 0 0;
-  margin-top: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
