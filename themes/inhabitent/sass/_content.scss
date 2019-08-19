@@ -21,7 +21,11 @@
 .entry-content,
 .entry-summary {
 	margin: $base__space-unit 0 0;
-	.home & { margin: 0; }
+	
+	.home &,
+	.single-product & 
+	{ margin: 0; }
+	
 }
 
 .page-links {
@@ -295,9 +299,15 @@
 
 .hentry {
 	margin: $base__space-unit*2  0 $base__space-unit*3 0;
-	
-	.home & { margin: 0; }
 	&:last-child { margin-bottom: 0;}
+
+	.home & { margin: 0; }
+	.single-product & { 
+		@include flex-items-content(flex-start, space-between);
+		& > * {
+			flex: 0 1 48%;
+		}
+	}
 
 	.entry-header {
 		position: relative;
@@ -333,8 +343,18 @@
 				bottom: 0; right: 0;
 				text-align: center;
 			}
+		}	
+	} // end .entry-header
+
+	.entry-content {
+		.product-price {
+			font-family: $font__header;
+			font-size: 1.8rem;
+			line-height: 1;
 		}
-		
+		p {
+			margin: 2rem 0 1.5rem 0;
+		}
 	}
 }
 

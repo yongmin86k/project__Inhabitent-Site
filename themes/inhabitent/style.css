@@ -313,6 +313,10 @@ h1 {
   .tax-product-type h1 {
     margin: 0 0 .5rem 0;
     text-align: center; }
+  .single-product h1 {
+    margin: 0;
+    margin-bottom: 1rem;
+    color: #d99054; }
 
 h2 {
   font-size: 2.125em; }
@@ -488,6 +492,13 @@ input[type="submit"] {
 .button-adventures {
   margin-top: 2rem;
   font-size: 1.2rem; }
+
+.social-buttons .black-btn {
+  padding: 0.75rem 1.5rem 0.75rem 0.6rem;
+  margin-right: 0.5rem; }
+  .social-buttons .black-btn i {
+    width: 2.5rem;
+    text-align: center; }
 
 /* Fields */
 input[type="text"],
@@ -739,8 +750,13 @@ nav a {
 .entry-content,
 .entry-summary {
   margin: 1.5rem 0 0; }
-  .home .page-content, .home
+  .home .page-content,
+  .single-product .page-content, .home
+  .entry-content,
+  .single-product
   .entry-content, .home
+  .entry-summary,
+  .single-product
   .entry-summary {
     margin: 0; }
 
@@ -1037,10 +1053,24 @@ nav a {
 
 .hentry {
   margin: 3rem 0 4.5rem 0; }
-  .home .hentry {
-    margin: 0; }
   .hentry:last-child {
     margin-bottom: 0; }
+  .home .hentry {
+    margin: 0; }
+  .single-product .hentry {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    .single-product .hentry > * {
+      -webkit-box-flex: 0;
+          -ms-flex: 0 1 48%;
+              flex: 0 1 48%; }
   .hentry .entry-header {
     position: relative; }
     .home .hentry .entry-header .hero-image-front-page {
@@ -1077,6 +1107,12 @@ nav a {
       bottom: 0;
       right: 0;
       text-align: center; }
+  .hentry .entry-content .product-price {
+    font-family: "Novecento Sans Web", sans-serif;
+    font-size: 1.8rem;
+    line-height: 1; }
+  .hentry .entry-content p {
+    margin: 2rem 0 1.5rem 0; }
 
 /* Asides */
 .blog .format-aside .entry-title,
