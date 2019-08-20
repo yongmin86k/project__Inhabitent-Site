@@ -49,11 +49,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   padding: .75rem;
   padding-bottom: 1.2rem; }
 
-.loop-type-product-type button, .loop-type-product-type input[type="button"], .loop-type-product-type input[type="reset"], .loop-type-product-type input[type="submit"], .button-adventures, .comment-form input[type=submit] {
+.loop-type-product-type button, .loop-type-product-type input[type="button"], .loop-type-product-type input[type="reset"], .loop-type-product-type input[type="submit"], .button-adventures, .comment-form input[type=submit], .wpcf7-form input[type=submit] {
   background-color: #248A83;
   border-color: #248A83;
   color: white; }
-  .loop-type-product-type button:hover, .loop-type-product-type input:hover[type="button"], .loop-type-product-type input:hover[type="reset"], .loop-type-product-type input:hover[type="submit"], .button-adventures:hover, .comment-form input:hover[type=submit], .loop-type-product-type button:active, .loop-type-product-type input:active[type="button"], .loop-type-product-type input:active[type="reset"], .loop-type-product-type input:active[type="submit"], .button-adventures:active, .comment-form input:active[type=submit], .loop-type-product-type button:focus, .loop-type-product-type input:focus[type="button"], .loop-type-product-type input:focus[type="reset"], .loop-type-product-type input:focus[type="submit"], .button-adventures:focus, .comment-form input:focus[type=submit] {
+  .loop-type-product-type button:hover, .loop-type-product-type input:hover[type="button"], .loop-type-product-type input:hover[type="reset"], .loop-type-product-type input:hover[type="submit"], .button-adventures:hover, .comment-form input:hover[type=submit], .wpcf7-form input:hover[type=submit], .loop-type-product-type button:active, .loop-type-product-type input:active[type="button"], .loop-type-product-type input:active[type="reset"], .loop-type-product-type input:active[type="submit"], .button-adventures:active, .comment-form input:active[type=submit], .wpcf7-form input:active[type=submit], .loop-type-product-type button:focus, .loop-type-product-type input:focus[type="button"], .loop-type-product-type input:focus[type="reset"], .loop-type-product-type input:focus[type="submit"], .button-adventures:focus, .comment-form input:focus[type=submit], .wpcf7-form input:focus[type=submit] {
     background-color: #144d49;
     border-color: #144d49;
     color: white; }
@@ -553,7 +553,7 @@ textarea {
   padding-left: 3px;
   width: 100%; }
 
-.comment-form {
+.comment-form, .wpcf7-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -565,27 +565,49 @@ textarea {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
-  .comment-form label {
+  .comment-form label, .wpcf7-form label {
     margin-bottom: .5rem;
     font-family: "Novecento Sans Web", sans-serif;
     font-size: 1.2rem;
     display: block;
     text-transform: uppercase; }
-    .comment-form label .required {
+    .comment-form label .required, .wpcf7-form label .required {
       color: #d99054; }
-  .comment-form input[type=email], .comment-form input[type=password], .comment-form input[type=search], .comment-form input[type=text], .comment-form input[type=url], .comment-form textarea {
+  .comment-form input[type=email], .wpcf7-form input[type=email], .comment-form input[type=password], .wpcf7-form input[type=password], .comment-form input[type=search], .wpcf7-form input[type=search], .comment-form input[type=text], .wpcf7-form input[type=text], .comment-form input[type=url], .wpcf7-form input[type=url], .comment-form textarea, .wpcf7-form textarea {
     padding: .25rem;
     background-color: #f4f4f4;
     border: 1px solid #e1e1e1;
     border-radius: 0;
     line-height: 1.75;
     width: 100%; }
-  .comment-form .comment-form-comment, .comment-form .comment-form-url {
+  .comment-form .comment-form-comment, .wpcf7-form .comment-form-comment, .comment-form .comment-form-url, .wpcf7-form .comment-form-url {
     width: 100%; }
-  .comment-form .comment-form-author, .comment-form .comment-form-email {
+  .comment-form .comment-form-author, .wpcf7-form .comment-form-author, .comment-form .comment-form-email, .wpcf7-form .comment-form-email {
     width: 48%; }
-  .comment-form .comment-form-cookies-consent {
+  .comment-form .comment-form-cookies-consent, .wpcf7-form .comment-form-cookies-consent {
     display: none; }
+
+.wpcf7-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  .hentry .entry-content .wpcf7-form p {
+    width: 100%;
+    margin: 0.75rem 0; }
+  .wpcf7-form input, .wpcf7-form textarea {
+    margin-top: .5rem; }
+  .wpcf7-form input[type=text], .wpcf7-form input[type=email] {
+    width: 50%; }
 
 .search-form label {
   display: -webkit-box;

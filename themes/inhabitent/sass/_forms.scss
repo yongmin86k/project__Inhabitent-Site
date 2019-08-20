@@ -107,7 +107,20 @@ textarea {
 	input[type=submit] {
 		@extend %btn-highlight;
 	}
-	
+}
+
+.wpcf7-form {
+	@extend .comment-form;
+	@include flex-items-content(flex-start, flex-start);
+	flex-direction: column;
+	p { 
+		.hentry .entry-content & {
+			width: 100%; 
+			margin: $base__space-unit/2 0;
+		}
+	}
+	input, textarea { margin-top : .5rem; }
+	input[type=text], input[type=email] {width: 50%;}
 }
 
 // Customize search form
