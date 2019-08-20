@@ -67,6 +67,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   height: 1px;
   border-bottom: 1px solid #e1e1e1; }
 
+input[type="search"], .comment-form input[type=email], .wpcf7-form input[type=email], .comment-form input[type=password], .wpcf7-form input[type=password], .comment-form input[type=search], .wpcf7-form input[type=search], .comment-form input[type=text], .wpcf7-form input[type=text], .comment-form input[type=url], .wpcf7-form input[type=url], .comment-form textarea, .wpcf7-form textarea {
+  padding: .25rem;
+  background-color: #f4f4f4;
+  border: 1px solid #e1e1e1;
+  border-radius: 0;
+  line-height: 1.75;
+  width: 100%; }
+
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -533,7 +541,6 @@ input[type="text"],
 input[type="email"],
 input[type="url"],
 input[type="password"],
-input[type="search"],
 textarea {
   color: #666;
   border: 1px solid #ccc;
@@ -542,16 +549,20 @@ textarea {
   input[type="email"]:focus,
   input[type="url"]:focus,
   input[type="password"]:focus,
-  input[type="search"]:focus,
   textarea:focus {
     color: #111; }
 
 input[type="text"],
 input[type="email"],
 input[type="url"],
-input[type="password"],
-input[type="search"] {
+input[type="password"] {
   padding: 3px; }
+
+input[type="search"] {
+  width: 12rem; }
+
+.search-submit {
+  display: none; }
 
 textarea {
   padding-left: 3px;
@@ -578,11 +589,6 @@ textarea {
     .comment-form label .required, .wpcf7-form label .required {
       color: #d99054; }
   .comment-form input[type=email], .wpcf7-form input[type=email], .comment-form input[type=password], .wpcf7-form input[type=password], .comment-form input[type=search], .wpcf7-form input[type=search], .comment-form input[type=text], .wpcf7-form input[type=text], .comment-form input[type=url], .wpcf7-form input[type=url], .comment-form textarea, .wpcf7-form textarea {
-    padding: .25rem;
-    background-color: #f4f4f4;
-    border: 1px solid #e1e1e1;
-    border-radius: 0;
-    line-height: 1.75;
     width: 100%; }
   .comment-form .comment-form-comment, .wpcf7-form .comment-form-comment, .comment-form .comment-form-url, .wpcf7-form .comment-form-url {
     width: 100%; }
@@ -613,7 +619,7 @@ textarea {
   .wpcf7-form input[type=text], .wpcf7-form input[type=email] {
     width: 50%; }
 
-.search-form label {
+.site-header .search-form label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -623,16 +629,17 @@ textarea {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start; }
-  .search-form label .search-submit {
+  .site-header .search-form label .search-submit {
+    display: block;
     cursor: pointer;
     padding: 0;
     border: 0 solid transparent;
     color: #248A83; }
-    .search-form label .search-submit:hover, .search-form label .search-submit:active, .search-form label .search-submit:focus {
+    .site-header .search-form label .search-submit:hover, .site-header .search-form label .search-submit:active, .site-header .search-form label .search-submit:focus {
       background-color: transparent;
       border-color: none;
       color: #2f1339; }
-  .search-form label .search-field {
+  .site-header .search-form label .search-field {
     width: 0;
     padding: 0;
     text-transform: inherit;
@@ -641,7 +648,7 @@ textarea {
     border: 0 solid transparent;
     -webkit-transition: .4s;
     transition: .4s; }
-    .search-form label .search-field.expand {
+    .site-header .search-form label .search-field.expand {
       padding: 5px;
       width: 12rem; }
 

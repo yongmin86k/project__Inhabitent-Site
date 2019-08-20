@@ -52,7 +52,6 @@ input[type="text"],
 input[type="email"],
 input[type="url"],
 input[type="password"],
-input[type="search"],
 textarea {
 	color: #666;
 	border: 1px solid #ccc;
@@ -66,9 +65,16 @@ textarea {
 input[type="text"],
 input[type="email"],
 input[type="url"],
-input[type="password"],
-input[type="search"] {
+input[type="password"] {
 	padding: 3px;
+}
+
+input[type="search"] {
+	@extend %default-input;
+	width: 12rem;
+}
+.search-submit {
+	display: none;
 }
 
 textarea {
@@ -91,11 +97,7 @@ textarea {
 		}
 	}
 	input[type=email], input[type=password], input[type=search], input[type=text], input[type=url], textarea {
-		padding: .25rem;
-		background-color: #f4f4f4;
-		border: 1px solid #e1e1e1;
-		border-radius: 0;
-		line-height: $font__main_line-height;
+		@extend %default-input;
 		width: 100%;
 	}
 	.comment-form {
@@ -124,34 +126,37 @@ textarea {
 }
 
 // Customize search form
-.search {
-	&-form {
-		label {
-			@include flex-items-content(center, flex-start);
-
-			.search {
-				&-submit {
-					cursor: pointer;
-					padding: 0;
-					border: 0 solid transparent;
-					color: $color__text-screen;
-					&:hover, &:active, &:focus {
-						background-color: transparent;
-						border-color: none;
-						color: $color__link-hover;
+.site-header {
+	.search {
+		&-form {
+			label {
+				@include flex-items-content(center, flex-start);
+	
+				.search {
+					&-submit {
+						display: block;
+						cursor: pointer;
+						padding: 0;
+						border: 0 solid transparent;
+						color: $color__text-screen;
+						&:hover, &:active, &:focus {
+							background-color: transparent;
+							border-color: none;
+							color: $color__link-hover;
+						}
 					}
-				}
-				&-field {
-					width: 0;
-					padding: 0;
-					text-transform: inherit;
-					font-family: inherit;
-					margin-left: 1rem;
-					border: 0 solid transparent;
-					transition: .4s;
-					&.expand {
-						padding: 5px;
-						width: 12rem;
+					&-field {
+						width: 0;
+						padding: 0;
+						text-transform: inherit;
+						font-family: inherit;
+						margin-left: 1rem;
+						border: 0 solid transparent;
+						transition: .4s;
+						&.expand {
+							padding: 5px;
+							width: 12rem;
+						}
 					}
 				}
 			}

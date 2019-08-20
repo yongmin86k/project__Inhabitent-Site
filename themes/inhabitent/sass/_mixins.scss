@@ -51,3 +51,12 @@
 		border-bottom: $border__solid;
 	}
 }
+
+%default-input {
+	padding: .25rem;
+	background-color: #f4f4f4;
+	border: 1px solid #e1e1e1;
+	border-radius: 0;
+	line-height: $font__main_line-height;
+	width: 100%;
+}
