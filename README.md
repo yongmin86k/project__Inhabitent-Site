@@ -81,13 +81,13 @@ Each of theme templates is used to display the best designs and layouts of the p
     
     Create custom widgets in the sidebar for **contact info** and **business hours** to change information easily.
 
-    ![Preview](_preview/preview_0.jpg)
+    ![Preview](themes/inhabitent/_preview/preview_0.jpg)
 
 - **Inhabitent functionality**
 
     Add custom posts menu in the admin menu.
 
-    ![Preview](_preview/preview_1.jpg)
+    ![Preview](themes/inhabitent/_preview/preview_1.jpg)
 
 
 
