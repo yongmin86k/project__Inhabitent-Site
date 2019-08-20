@@ -682,7 +682,9 @@ nav a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  z-index: 100; }
+  z-index: 100;
+  -webkit-transition: .2s;
+  transition: .2s; }
   .site-header:after {
     position: absolute;
     left: 0;
@@ -691,6 +693,15 @@ nav a {
     height: 1px;
     content: '';
     border-bottom: 1px solid #e1e1e1; }
+  .site-header.hide {
+    top: -3.125rem; }
+  .site-header.dark-mode.site-header {
+    background-color: transparent;
+    text-shadow: 1px 1px 2px #323232; }
+    .site-header.dark-mode.site-header:after {
+      display: none; }
+  .site-header.dark-mode a, .site-header.dark-mode .search-submit i {
+    color: white; }
 
 .main-navigation {
   display: -webkit-box;
@@ -870,7 +881,7 @@ nav a {
           flex-direction: column;
   position: relative;
   margin-top: 3.125rem; }
-  .home .site-content,
+  .page-front-page .site-content,
   .page-template-page-about .site-content,
   .single-adventure .site-content {
     margin-top: 0; }

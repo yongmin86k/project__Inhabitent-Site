@@ -34,6 +34,7 @@ nav a {
 	width:  100%;
 	@include flex-items-content;
 	z-index: 100;
+	transition: .2s;
 	&:after {
 		position: absolute;
 		left: 0; bottom: 0;
@@ -41,6 +42,21 @@ nav a {
 		height: 1px;
 		content: '';
 		border-bottom: $border__solid;
+	}
+	&.hide {
+		top: -3.125rem;
+	}
+	&.dark-mode {
+		&.site-header {
+			background-color: transparent;
+			text-shadow: 1px 1px 2px #323232;
+			&:after {
+				display: none;
+			}
+		}
+		a, .search-submit i {
+			color: white;
+		}
 	}
 }
 .main-navigation {
