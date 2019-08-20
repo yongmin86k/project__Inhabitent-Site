@@ -49,4 +49,15 @@
 			</header><!-- #masthead -->
 
 			<div id="content" class="site-content">
+			<?php if ( have_posts() && has_post_thumbnail() ): ?>
+				<div class="full-width-image" style="
+					width: 100vw; height: 100vh;
+					background :
+						url(<?php echo get_the_post_thumbnail_url();?>);
+					background-size: cover;
+					background-position: center; 
+					background-repeat: no-repeat;
+				">
+				</div>
+			<?php endif ?>
 				<div class="main-content full-width">

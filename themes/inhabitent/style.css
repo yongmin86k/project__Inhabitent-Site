@@ -326,6 +326,10 @@ h1 {
     margin: 0;
     margin-bottom: 1rem;
     color: #d99054; }
+  .single-adventure h1 {
+    color: #404040;
+    font-size: 2.4rem;
+    margin-bottom: .5rem; }
 
 h2 {
   font-size: 2.125em; }
@@ -861,7 +865,8 @@ nav a {
   position: relative;
   margin-top: 3.125rem; }
   .home .site-content,
-  .page-template-page-about .site-content {
+  .page-template-page-about .site-content,
+  .single-adventure .site-content {
     margin-top: 0; }
   .site-content .main-content {
     display: -webkit-box;
@@ -875,7 +880,8 @@ nav a {
             justify-content: space-between;
     width: 1120px; }
     .home .site-content .main-content,
-    .page-template-page-about .site-content .main-content {
+    .page-template-page-about .site-content .main-content,
+    .single-adventure .site-content .main-content {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -891,7 +897,8 @@ nav a {
               flex-direction: column;
       width: 100%; }
       .home .site-content .main-content .full-width-image,
-      .page-template-page-about .site-content .main-content .full-width-image {
+      .page-template-page-about .site-content .main-content .full-width-image,
+      .single-adventure .site-content .main-content .full-width-image {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -910,7 +917,8 @@ nav a {
       padding-bottom: 3rem; }
       .home .site-content .main-content .content-area {
         margin: 0; }
-      .page-template-page-about .site-content .main-content .content-area {
+      .page-template-page-about .site-content .main-content .content-area,
+      .single-adventure .site-content .main-content .content-area {
         margin: 0;
         -webkit-box-flex: 0;
             -ms-flex: 0 1 auto;
@@ -1196,6 +1204,10 @@ nav a {
       .single-post .hentry .entry-header a:focus,
       .single-post .hentry .entry-header a:active {
         color: #f0e4d1; }
+    .single-adventure .hentry .entry-header .entry-meta {
+      font-family: "Novecento Sans Web", sans-serif;
+      font-size: 1.2rem;
+      text-transform: uppercase; }
   .hentry .entry-content .product-price {
     font-family: "Novecento Sans Web", sans-serif;
     font-size: 1.8rem;

@@ -39,16 +39,17 @@
 	position: relative;
 	margin-top: 3.125rem;
 	.home &,
-	.page-template-page-about & { 
-		margin-top: 0;
-	}
+	.page-template-page-about &,
+	.single-adventure &
+	{ margin-top: 0;}
 	
 	.main-content {
 		@include flex-items-content(flex-start, space-between);
 		@include site-width;
 
 		.home &,
-		.page-template-page-about &
+		.page-template-page-about &,
+		.single-adventure &
 		{
 			@include flex-items-content();
 			flex-direction: column;
@@ -65,7 +66,8 @@
 			padding-bottom: 3rem;
 			
 			.home & { margin: 0;}
-			.page-template-page-about & {
+			.page-template-page-about &,
+			.single-adventure & {
 				margin: 0;
 				flex: 0 1 auto;
 				width: $blog__width;	
@@ -345,7 +347,14 @@
 					color: $color__header-hover;
 				}
 			}
-		}	
+		}
+		.single-adventure & {
+			.entry-meta {
+				font-family: $font__header;
+				font-size: 1.2rem;
+				text-transform: uppercase;
+			}
+		}
 	} // end .entry-header
 
 	.entry-content {
@@ -366,9 +375,6 @@
 		& > * { margin-right: $base__space-unit; }
 	}
 }
-
-
-
 
 /* Asides */
 
