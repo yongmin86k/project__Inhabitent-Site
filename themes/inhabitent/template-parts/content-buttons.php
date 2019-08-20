@@ -2,7 +2,7 @@
 /**
  * Template part for displaying buttons in pages or posts.
  *
- * @package RED_Starter_Theme
+ * @package Inhabitent_Theme
  */
 
 ?>
