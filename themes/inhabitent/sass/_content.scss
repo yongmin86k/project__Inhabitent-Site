@@ -76,7 +76,7 @@
 			}
 
 			&::after {
-				.blog &, 
+				.blog &, .tag &, .category &,
 				.page-template-default &,
 				.post-template-default & {
 					position: absolute;
@@ -92,7 +92,7 @@
 		.widget-area {
 			flex: 2;
 			height: 100%;
-			margin-top: 1.5rem;
+			margin-top: $base__space-unit;
 			margin-left: $base__space-unit*2;
 		}
 	}		
@@ -133,7 +133,7 @@
 		text-align: center;
 	}
 	.loop-item-container {
-		margin-right: 1.5rem;
+		margin-right: $base__space-unit;
 		flex-direction: column;	
 		flex: 1;
 		&:last-child { margin-right: 0; }
@@ -174,7 +174,7 @@
 							&-title {
 								height: 3.125rem;
 								font-size: 1.3rem;
-								margin: 0 0 1.5rem 0;
+								margin: 0 0 $base__space-unit 0;
 								overflow: hidden;
 							}
 						}
@@ -187,7 +187,7 @@
 			height: 34.25rem;
 			display: grid;
 			grid-template: repeat(2, 1fr) / repeat(4, 1fr);
-			grid-gap: 1.5rem;
+			grid-gap: $base__space-unit;
 			.loop-item-container {
 				position: relative;
 				margin: 0;
@@ -199,7 +199,7 @@
 					}
 					&-title {
 						position: relative;
-						padding: 1.5rem;
+						padding: $base__space-unit;
 						padding-top: 2.8rem;
 						a {
 							color: white;
@@ -257,7 +257,7 @@
 		&-products {
 			display: grid;
 			grid-template-columns: repeat(4, 1fr);
-			grid-gap: 1.5rem;
+			grid-gap: $base__space-unit;
 			.loop-item-container {
 				position: relative;
 				margin: 0;
@@ -317,7 +317,8 @@
 				@include flex-items-content();
 			}
 		}
-		.blog & {
+		.blog &, .archive &,
+		.single-post & {
 			.entry-title, .entry-meta {
 				position: absolute;
 				background-color: $color__text-screen;
@@ -329,19 +330,20 @@
 				top: 1rem; left: 0;
 				font-size: 2rem;
 				letter-spacing: 2px;
-				a {
-					color: white;
-					text-decoration: none;
-					&:hover, &:focus, &:active {
-						color: $color__header-hover;
-					}
-				}
 			}
 			.entry-meta {
 				min-width: 25rem;
-				padding: 0.25rem 1.5rem;
+				padding: 0.25rem $base__space-unit;
 				bottom: 0; right: 0;
-				text-align: center;
+				font-family: $font__header;
+				text-transform: uppercase;
+				text-align: center;	
+			}
+			a {
+				color: white;
+				&:hover, &:focus, &:active {
+					color: $color__header-hover;
+				}
 			}
 		}	
 	} // end .entry-header
@@ -353,8 +355,15 @@
 			line-height: 1;
 		}
 		p {
-			margin: 2rem 0 1.5rem 0;
+			margin: 2rem 0 $base__space-unit 0;
 		}
+	}
+
+	.entry-footer {
+		margin-bottom: $base__space-unit;
+		font-family: $font__header;
+		text-transform: uppercase;
+		& > * { margin-right: $base__space-unit; }
 	}
 }
 
@@ -375,6 +384,44 @@
 }
 .bypostauthor {
 	display: block;
+}
+.comment {
+	&-list {
+		position: relative;
+		&::before {
+			position: absolute;
+			content: '';
+			width: 100%;
+			bottom: 0;
+			left: 0;
+			height: 1px;
+			border-bottom: $border__solid;
+		}
+	}
+	&-body {
+		position: relative;
+		padding: $base__space-unit 0;
+		@include flex-items-content(flex-start, flex-start);
+		@extend %comment-seperator;
+		.comment-author-avatar {
+			margin-right: $base__space-unit;
+			width: 4rem; height: 4rem;
+			border-radius: 50%;
+			overflow: hidden;
+		}
+	}
+	&-author cite {
+		font-style: normal;
+		font-weight: 700;
+	}
+	&-metadata {
+		color: $color__grey_medium;
+		margin-bottom: .75rem;
+	}
+	&-meta p {
+		margin-top: 1rem;
+		margin-bottom: .75rem;
+	}
 }
 
 /* Footer */
@@ -408,7 +455,7 @@
 				list-style-type: none;
 				li {
 					margin: 1rem .5rem;
-					i { width: 1.5rem; text-align: center;}
+					i { width: $base__space-unit; text-align: center;}
 					a { 
 						color: white;
 						&:hover { text-decoration: underline; }
@@ -426,7 +473,7 @@
 		}
 	}
 	.footer-copyright {
-		padding: 1.5rem;
+		padding: $base__space-unit;
 		a {
 			font-family: $font__header;
 			color: white;

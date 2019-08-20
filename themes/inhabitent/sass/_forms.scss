@@ -11,7 +11,7 @@ input[type="submit"] {
 	cursor: pointer;
 	border: 1px solid black;
 	color: black;
-	padding: 0.75rem 1.5rem;
+	padding: 0.75rem $base__space-unit;
 	background-color: white;
 	font-family: $font__header;
 	font-size: 1rem;
@@ -37,7 +37,7 @@ input[type="submit"] {
 
 .social-buttons {
 	.black-btn {
-		padding: 0.75rem 1.5rem 0.75rem 0.6rem;
+		padding: 0.75rem $base__space-unit 0.75rem 0.6rem;
 		margin-right: 0.5rem;
 		i {
 			width: 2.5rem;
@@ -74,6 +74,40 @@ input[type="search"] {
 textarea {
 	padding-left: 3px;
 	width: 100%;
+}
+
+// Customize comment form
+.comment-form {
+	@include flex-items-content(flex-start, space-between);
+	flex-wrap: wrap;
+	label {
+		margin-bottom: .5rem;
+		font-family: $font__header;
+		font-size: 1.2rem;
+		display: block;
+		text-transform: uppercase;
+		.required {
+			color: $color__footer-header;
+		}
+	}
+	input[type=email], input[type=password], input[type=search], input[type=text], input[type=url], textarea {
+		padding: .25rem;
+		background-color: #f4f4f4;
+		border: 1px solid #e1e1e1;
+		border-radius: 0;
+		line-height: $font__main_line-height;
+		width: 100%;
+	}
+	.comment-form {
+		&-comment, &-url { width: 100%; }
+		&-author, &-email { width: 48%; }
+		&-cookies-consent { display: none; }
+	}
+	
+	input[type=submit] {
+		@extend %btn-highlight;
+	}
+	
 }
 
 // Customize search form

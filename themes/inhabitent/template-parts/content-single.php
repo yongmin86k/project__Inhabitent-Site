@@ -10,7 +10,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php if ( has_post_thumbnail() ) : ?>
-			<?php the_post_thumbnail( 'large' ); ?>
+			<?php the_post_thumbnail( 'full' ); ?>
 		<?php endif; ?>
 
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
@@ -33,4 +33,7 @@
 	<footer class="entry-footer">
 		<?php red_starter_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
+	<div class="wrap-buttons">
+		<?php get_template_part( 'template-parts/content', 'buttons' ); ?>
+	</div>
 </article><!-- #post-## -->

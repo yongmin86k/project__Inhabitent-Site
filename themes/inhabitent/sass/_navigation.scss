@@ -72,9 +72,9 @@ nav a {
 				@include flex-items-content(center, flex-start);
 				list-style: none;
 				margin: 0;
-				padding: 0 1.5rem 0 0;
+				padding: 0 $base__space-unit 0 0;
 				li {
-					padding-left: 1.5rem;
+					padding-left: $base__space-unit;
 				}
 			}
 		}

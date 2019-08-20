@@ -49,14 +49,23 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   padding: .75rem;
   padding-bottom: 1.2rem; }
 
-.loop-type-product-type button, .loop-type-product-type input[type="button"], .loop-type-product-type input[type="reset"], .loop-type-product-type input[type="submit"], .button-adventures {
+.loop-type-product-type button, .loop-type-product-type input[type="button"], .loop-type-product-type input[type="reset"], .loop-type-product-type input[type="submit"], .button-adventures, .comment-form input[type=submit] {
   background-color: #248A83;
   border-color: #248A83;
   color: white; }
-  .loop-type-product-type button:hover, .loop-type-product-type input:hover[type="button"], .loop-type-product-type input:hover[type="reset"], .loop-type-product-type input:hover[type="submit"], .button-adventures:hover, .loop-type-product-type button:active, .loop-type-product-type input:active[type="button"], .loop-type-product-type input:active[type="reset"], .loop-type-product-type input:active[type="submit"], .button-adventures:active, .loop-type-product-type button:focus, .loop-type-product-type input:focus[type="button"], .loop-type-product-type input:focus[type="reset"], .loop-type-product-type input:focus[type="submit"], .button-adventures:focus {
+  .loop-type-product-type button:hover, .loop-type-product-type input:hover[type="button"], .loop-type-product-type input:hover[type="reset"], .loop-type-product-type input:hover[type="submit"], .button-adventures:hover, .comment-form input:hover[type=submit], .loop-type-product-type button:active, .loop-type-product-type input:active[type="button"], .loop-type-product-type input:active[type="reset"], .loop-type-product-type input:active[type="submit"], .button-adventures:active, .comment-form input:active[type=submit], .loop-type-product-type button:focus, .loop-type-product-type input:focus[type="button"], .loop-type-product-type input:focus[type="reset"], .loop-type-product-type input:focus[type="submit"], .button-adventures:focus, .comment-form input:focus[type=submit] {
     background-color: #144d49;
     border-color: #144d49;
     color: white; }
+
+.comment-body::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 1px;
+  border-bottom: 1px solid #e1e1e1; }
 
 html {
   font-family: sans-serif;
@@ -325,6 +334,9 @@ h2 {
   h2.widget-title {
     font-size: 1.5rem; }
 
+h3.comment-reply-title {
+  font-size: 1.8rem; }
+
 /* Copy */
 p {
   margin-bottom: 1.5rem; }
@@ -410,6 +422,10 @@ hr {
 ul,
 ol {
   margin: 0 0 1.5rem 3rem; }
+  ul.comment-list,
+  ol.comment-list {
+    margin-left: 0;
+    padding: 0; }
 
 ul {
   list-style: disc; }
@@ -430,9 +446,17 @@ ul {
     font-family: "Novecento Sans Web", sans-serif;
     font-size: 1.2rem;
     text-transform: uppercase; }
+  ul.children {
+    list-style: none; }
 
 ol {
   list-style: decimal; }
+  ol.comment-list {
+    list-style: none; }
+    ol.comment-list > li:first-child > .comment-body {
+      padding-top: 0; }
+      ol.comment-list > li:first-child > .comment-body::before {
+        display: none; }
 
 .list-product-texonomies li {
   margin: 0 1.5rem; }
@@ -528,6 +552,40 @@ input[type="search"] {
 textarea {
   padding-left: 3px;
   width: 100%; }
+
+.comment-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  .comment-form label {
+    margin-bottom: .5rem;
+    font-family: "Novecento Sans Web", sans-serif;
+    font-size: 1.2rem;
+    display: block;
+    text-transform: uppercase; }
+    .comment-form label .required {
+      color: #d99054; }
+  .comment-form input[type=email], .comment-form input[type=password], .comment-form input[type=search], .comment-form input[type=text], .comment-form input[type=url], .comment-form textarea {
+    padding: .25rem;
+    background-color: #f4f4f4;
+    border: 1px solid #e1e1e1;
+    border-radius: 0;
+    line-height: 1.75;
+    width: 100%; }
+  .comment-form .comment-form-comment, .comment-form .comment-form-url {
+    width: 100%; }
+  .comment-form .comment-form-author, .comment-form .comment-form-email {
+    width: 48%; }
+  .comment-form .comment-form-cookies-consent {
+    display: none; }
 
 .search-form label {
   display: -webkit-box;
@@ -839,7 +897,7 @@ nav a {
       .post-type-archive-product .site-content .main-content .content-area,
       .tax-product-type .site-content .main-content .content-area {
         margin: 3rem 0 0 0; }
-      .blog .site-content .main-content .content-area::after,
+      .blog .site-content .main-content .content-area::after, .tag .site-content .main-content .content-area::after, .category .site-content .main-content .content-area::after,
       .page-template-default .site-content .main-content .content-area::after,
       .post-template-default .site-content .main-content .content-area::after {
         position: absolute;
@@ -1085,34 +1143,49 @@ nav a {
       -webkit-box-pack: center;
           -ms-flex-pack: center;
               justify-content: center; }
-    .blog .hentry .entry-header .entry-title, .blog .hentry .entry-header .entry-meta {
+    .blog .hentry .entry-header .entry-title, .blog .hentry .entry-header .entry-meta, .archive .hentry .entry-header .entry-title, .archive .hentry .entry-header .entry-meta,
+    .single-post .hentry .entry-header .entry-title,
+    .single-post .hentry .entry-header .entry-meta {
       position: absolute;
       background-color: #248A83;
       color: white; }
-    .blog .hentry .entry-header .entry-title {
+    .blog .hentry .entry-header .entry-title, .archive .hentry .entry-header .entry-title,
+    .single-post .hentry .entry-header .entry-title {
       max-width: 36rem;
       padding: 0.75rem 2rem;
       top: 1rem;
       left: 0;
       font-size: 2rem;
       letter-spacing: 2px; }
-      .blog .hentry .entry-header .entry-title a {
-        color: white;
-        text-decoration: none; }
-        .blog .hentry .entry-header .entry-title a:hover, .blog .hentry .entry-header .entry-title a:focus, .blog .hentry .entry-header .entry-title a:active {
-          color: #f0e4d1; }
-    .blog .hentry .entry-header .entry-meta {
+    .blog .hentry .entry-header .entry-meta, .archive .hentry .entry-header .entry-meta,
+    .single-post .hentry .entry-header .entry-meta {
       min-width: 25rem;
       padding: 0.25rem 1.5rem;
       bottom: 0;
       right: 0;
+      font-family: "Novecento Sans Web", sans-serif;
+      text-transform: uppercase;
       text-align: center; }
+    .blog .hentry .entry-header a, .archive .hentry .entry-header a,
+    .single-post .hentry .entry-header a {
+      color: white; }
+      .blog .hentry .entry-header a:hover, .blog .hentry .entry-header a:focus, .blog .hentry .entry-header a:active, .archive .hentry .entry-header a:hover, .archive .hentry .entry-header a:focus, .archive .hentry .entry-header a:active,
+      .single-post .hentry .entry-header a:hover,
+      .single-post .hentry .entry-header a:focus,
+      .single-post .hentry .entry-header a:active {
+        color: #f0e4d1; }
   .hentry .entry-content .product-price {
     font-family: "Novecento Sans Web", sans-serif;
     font-size: 1.8rem;
     line-height: 1; }
   .hentry .entry-content p {
     margin: 2rem 0 1.5rem 0; }
+  .hentry .entry-footer {
+    margin-bottom: 1.5rem;
+    font-family: "Novecento Sans Web", sans-serif;
+    text-transform: uppercase; }
+    .hentry .entry-footer > * {
+      margin-right: 1.5rem; }
 
 /* Asides */
 .blog .format-aside .entry-title,
@@ -1125,6 +1198,48 @@ nav a {
 
 .bypostauthor {
   display: block; }
+
+.comment-list {
+  position: relative; }
+  .comment-list::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    border-bottom: 1px solid #e1e1e1; }
+
+.comment-body {
+  position: relative;
+  padding: 1.5rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start; }
+  .comment-body .comment-author-avatar {
+    margin-right: 1.5rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    overflow: hidden; }
+
+.comment-author cite {
+  font-style: normal;
+  font-weight: 700; }
+
+.comment-metadata {
+  color: #808080;
+  margin-bottom: .75rem; }
+
+.comment-meta p {
+  margin-top: 1rem;
+  margin-bottom: .75rem; }
 
 /* Footer */
 .site-footer {
