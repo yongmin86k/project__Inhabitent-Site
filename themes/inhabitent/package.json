@@ -26,12 +26,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redacademy/redstarter.git"
+    "url": "git+https://github.com/yongmin86k/Inhabitent-Site-Project.git"
   },
   "author": "redacademy",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/redacademy/redstarter/issues"
+    "url": "https://github.com/yongmin86k/Inhabitent-Site-Project/issues"
   },
-  "homepage": "https://github.com/redacademy/redstarter#readme"
+  "homepage": "https://github.com/yongmin86k/Inhabitent-Site-Project/#readme"
 }
