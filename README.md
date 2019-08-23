@@ -93,6 +93,50 @@ Each of theme templates is used to display the best designs and layouts of the p
 
 &nbsp;
 
+**3. Customize codes in functions.php & inc/extra.php**
+- WordPress Hooks are a way for one piece of code to interact/modify another piece of code. They make up the foundation for how plugins and themes interact with WordPress Core, but they’re also used extensively by Core itself.
+
+- **Actions**
+
+    1. Disable editing theme and plugin files in Admin menu
+        ```php
+        function inhabitent_remove_submenus() {
+            remove_submenu_page( 'themes.php', 'theme-editor.php' );
+            remove_submenu_page( 'plugins.php', 'plugin-editor.php' );
+        }
+        
+        add_action( 'admin_menu', 'inhabitent_remove_submenus', 110 );
+        ```
+        &nbsp;
+    2. Add custom logo in the log-in screen
+        ```php
+            function inhabitent_custom_login() {
+                echo '<style type="text/css">
+                    #login h1 a { 
+                        background-image:url('.get_stylesheet_directory_uri().'/images/logos/inhabitent-logo-text-dark.svg);
+                        background-size: contain;
+                        width: 100%;
+                        margin: 0;
+                    }
+                </style>';
+            }
+            add_action('login_head', 'inhabitent_custom_login');
+        ```
+        &nbsp;
+
+- **Filters**
+
+    1. Modify the link of the logo in the log-in screen
+        ```php
+        function inhabitent_custom_login_url() {
+            return get_bloginfo( 'url' );
+        }
+        add_filter( 'login_headerurl', 'inhabitent_custom_login_url' );
+        ```
+
+
+&nbsp;
+
 ---
 &nbsp;
 ## License
